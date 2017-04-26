@@ -20,10 +20,6 @@ class Response
     @body = message
   end
 
-  def status
-    headers["Status"].split(" ").first.to_i
-  end
-
   def to_s
     "#{headers_string}, #{body_string}"
   end
@@ -36,6 +32,10 @@ class Response
 
   def headers_string
     "Headers: #{headers.to_s}" if headers
+  end
+
+  def status
+    headers["Status"].split(" ").first.to_i
   end
 
   def body_string
