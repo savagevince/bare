@@ -1,39 +1,26 @@
-# Clean code in Ruby, line by line (Ruby practice)
+# Class interaction and dependency injection with RSpec
 
-The goal of this workshop is practice writing the cleanest code you can, line by line.  It's harder to maintain high line by line code standards when working on a project.  In this workshop, you won't need to worry much about high level code structure.  You'll be able to focus on making each line and method as clean as possible.
+## Learning Objectives
+* Remember that dependency injection is a strategy to achieve dependency inversion
+* Remember that dependency inversion is a SOLID principle that can help to decouple dependent objects
+* Use doubles to test the messages being passed between objects, rather than implementation within an object
 
-For each exercise, initially focus on getting the tests to pass.  Once they are passing, refactor to make the code as clean as you can.  Even the best programmers write bad code first and refactor it into clean code.
-
-## Clean code, line by line
+## Dependency Injection
 
 Here are some guidelines:
-
-* Use proper indentation and idiomatic Ruby style: https://github.com/bbatsov/ruby-style-guide
-
-* Write short methods with one responsibility.
-
-* Give variables and methods descriptive names.
-
-* Avoid duplicated code.
-
-* Don't write your own code if there's already a method in the Ruby standard library that you can use.
+*  [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) states that:
+ _A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+  B. Abstractions should not depend on details. Details should depend on abstractions._
+* This means that where we have one class depending on another, we should create an abstraction via the interface.
+* We can do this by injecting the dependency via arguments at either the initialization level, or at the instance method level.
 
 ## Implement code to solve the exercises (30 mins)
 
-1. Work on your own.
+* Clone this repo, cd into the directory, and run `bundle`
+* First solve the feature tests in `spec/features/request_queue_spec.rb`
+* Then go on to solve the more challenge specs in `spec/features/authorization_features_spec.rb`
+* Remember to write unit tests as you go along, using doubles rather than real dependent objects
 
-2. Open `spec/exercise_1_spec.rb`.  It contains tests that describe the expected behaviour of your code.  Your job is to write that method.
-
-3. `bundle install`.
-
-4. Run the tests for the first exercise by running `rspec spec/exercise_1_spec.rb`.
-
-5. Write code in `lib/exercise_1.rb` to get these tests to pass.  Focus on getting the code working.  Don't worry about making it clean for now.
-
-6. Refactor your code until it's as clean as you can make it.
-
-7. Move onto exercise 2.
-
-## Plenary (30 mins)
+## Plenary (10 mins)
 
 We'll look at your solutions on the projector and find ways they could be made cleaner.
