@@ -22,11 +22,16 @@ See [README](./README.md).
 
 ## Plenary (15 minutes)
 
-* Ask some students to draw their diagrams on the board.
+- 1 minute, write your free thoughts on modelling so far. What was good, what was bad?
 
-* Questions:
-  * Ask about the amount of time students spent diagramming, vs the amount of time students spent writing code.
-  * Ask about the sorts of problems the students would find in their domain model when coding.  Talk about how they could change their approach to diagramming to find these problems at the diagram stage.
-  * Ask about what types of diagram were the most useful and why.
+- Draw out the TDD cycle, including the feature and unit test stages (BDD cycle) (5 minutes, discussion 5 minutes)
 
-* Do thumbs on the learning objectives.
+> Use the timer to give an elected member of each group 30 seconds to detail their group's diagram. Capture the iterated explanations in your own diagram.
+
+- Insert the diagramming process into the TDD cycle. (5 minutes, discussion 5 minutes)
+
+> Again, use the timer. This time give 40 seconds. Reflect the discussion in your master copy. The idea here is to reflect the fact that a program model needs frequent updating at specific points.
+
+- Return to the 1-minute summary earlier. Factor it to include the new insights from the plenary.
+
+> Students should come away from this session with an artefact that they can use as a metacognitive crutch for doing TDD with diagramming. It should help them to navigate the dichotomy of diagramming vs. feeling your way using TDD.
