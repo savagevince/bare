@@ -4,13 +4,13 @@
 
 1. Describe the structure of a one-to-many and a many-to-many relationship.
 2. Understand how one-to-many and many-to-many relationships are represented at a database level.
-3. Create databases tables representing one-to-many and many-to-many relationships.
+3. Create database tables representing one-to-many and many-to-many relationships.
 
 ## Intro
 
-A significant part of good relational database design is understanding how to divide data into related tables.  If you're designing a system for an online store, you're likely to need to retain information on both users and orders.  This information shouldn't be stored in the same table but it **is** related - information relating to an order is unlikely to be particularly useful if we have no way of knowing who placed it.  We can store these links by using table relationships.
+A significant part of good relational database design is understanding how to divide data into related tables.  If you're designing a system for an online store, you're likely to need to retain information on both users and orders.  This information shouldn't be stored in the same table but it **is** related - information relating to an order is unlikely to be particularly useful if we have no way of knowing who placed it.  We can store these links by establishing table relationships.
 
-There are three types of relationships which can exist between tables in a relational database - one-to-one, one-to-many, and many-to-many.  Looking at the latter two, we'll try to answer four useful questions.
+There are three types of relationships which can exist between tables in a relational database - one-to-one, one-to-many, and many-to-many.  Looking at the latter two, we'll try to answer four questions.
 
 a) What is the structure of the relationship?
 b) How is the relationship represented in a database?
@@ -18,7 +18,7 @@ c) How is the relationship established using SQL?
 d) How do we make use of the relationship to query data?
 
 ## One-to-many
-#### What is the structure of the relationship?
+### What is the structure of the relationship?
 
 A one-to-many relationship describes a situation in which one parent model _**has many**_ children, while the child model can be said to _**belong to**_ one parent.
 
@@ -29,9 +29,9 @@ More concretely, let's imagine we're designing a database system for a universit
 Presumably it's the case that each lecturer is responsible for teaching more than one course - i.e. a lecturer
 _**has many**_ courses.
 
-We can also assume that each course is taught by a particular lecturer - i.e. a course _**belongs to**_ a particular lecturer.
+We can also assume that each course is taught by a particular lecturer - i.e. a course _**belongs to**_ a single lecturer.
 
-#### How is the relationship represented in a database?
+### How is the relationship represented in a database?
 
 Representing a one-to-many relationship is straightforward - we add a column to the child model's table referencing the id of the parent model.
 
@@ -41,13 +41,13 @@ We can now see that Mr Chips teaches courses on the History of Toast and Ghostbu
 
 The data in this new column is referred to as a _**foreign key**_.
 
-#### How is the relationship established using SQL?
+### How is the relationship established using SQL?
 
 ```sql
 CREATE TABLE course (id SERIAL PRIMARY KEY, title VARCHAR(60), lecturer_id integer REFERENCES lecturer(id))
 ```
 
-#### How do we make use of the relationship to query data?
+### How do we make use of the relationship to query data?
 
 Lets imagine we want to retrieve a list of all courses taught by Professor X from our database.  We can see that his id is 2, so we can do the following:
 
@@ -60,13 +60,13 @@ This will return us a list of all rows from the course table where the value in 
 ## Exercise 1
 
 * Create a database with the name toy_db
-* Create two tables - users, and posts
+* Create two tables - users and posts
 * Users should have an id, name, and a password
 * Posts should have and id and content
 * Your tables should reflect a one-to-many relationship where users can _**have many**_ posts
 
 ## Many to Many
-#### What is the structure of the relationship?
+### What is the structure of the relationship?
 
 A many-to-many relationship describes a relationship between two models where there is no parent/child hierarchy - both models can be associated with _**multiple instances of the other**_.
 
@@ -125,4 +125,4 @@ Let's break this statement down a little.
 * Your tables should reflect a many-to-many relationship between Tags and Posts.
 
 ##Extension
-Using either the command line or TablePlus, add some data into your tables.  Use the relationships you have modelled to try querying the data.
+Using either the command line or TablePlus, add some data into your tables.  Try querying this data using the relationships you have modelled. 
