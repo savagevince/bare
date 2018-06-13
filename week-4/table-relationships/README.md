@@ -35,15 +35,7 @@ We can also assume that each course is taught by a particular lecturer - i.e. a 
 
 Representing a one-to-many relationship is straightforward - we add a column to the child model's table referencing the id of the parent model.
 
-LECTURER                          COURSE
--------------------               -----------------------------------------------
-|id  |name        |               |id |title                       |lecturer_id |
--------------------               ----------------------------------------------|
-|1   |Mr Chips    |               |1  |Underwater Basket Weaving   |2           |
-|2   |Professor X |               |2  |History of Toast            |1           |
--------------------               |3  |Ghostbusting                |1           |
-                                  |4  |Crochet 101         |2           |
-                                  ----------------------------------------------|
+![alt text](img/2.png "DB stage 2")
 
 We can now see that Mr Chips teaches courses on the History of Toast and Ghostbusting, while Professor X is responsible for Underwater Basket Weaving and Crochet 101.
 
@@ -80,15 +72,7 @@ A many-to-many relationship describes a relationship between two models where th
 
 For example, let's imaging that we now want to add a third table to our university database, this time listing students.
 
-LECTURER                          COURSE                                            STUDENT
--------------------               -----------------------------------------------   -----------------
-|id  |name        |               |id |title                       |lecturer_id |   |id |name       |
--------------------               ----------------------------------------------|   -----------------
-|1   |Mr Chips    |               |1  |Underwater Basket Weaving   |2           |   |1  |Bert       |
-|2   |Professor X |               |2  |History of Toast            |1           |   |2  |Ernie      |
--------------------               |3  |Ghostbusting                |1           |   |3  |Elmo       |
-                                  |4  |Crochet 101         |2           |   -----------------
-                                  ----------------------------------------------|
+![alt text](img/3.png "DB stage 3")
 
 Again, there seems to be a possible relationship here - a student can enrol in many courses, while each course can have many students enrolled in it.  In other words a student _**has many**_ courses and a course _**has many**_ students.
 
@@ -98,43 +82,17 @@ There are a number of ways we could theoretically represent this relationship;
 
 One option would be to add a course_id column to the students table and populate it with a list of course ids.
 
-STUDENT
-----------------------------
-|id |name       |class_ids |
-----------------------------
-|1  |Bert       |1,3,4     |
-|2  |Ernie      |2,4,      |
-|3  |Elmo       |1,2,3     |
-----------------------------
+![alt text](img/4.png "DB stage 4")
 
 This, however, could quickly become difficult to maintain and query.  Another option would be to add multiple columns to the student table referencing each course they are enrolled in.
 
-STUDENT
------------------------------------------------------
-|id |name       |class_1_id |class_2_id |class_3_id |
------------------------------------------------------
-|1  |Bert       |1          |3          |4          |
-|2  |Ernie      |2          |4          |           |
-|3  |Elmo       |1          |2          |3          |
------------------------------------------------------
+![alt text](img/5.png "DB stage 5")
 
 The limitations of this approach should be fairly obvious.
 
 The best method of representing a many-to-many relationship available to us is to create a *join table*.
 
-COURSE                                            STUDENT             STUDENT_COURSE
------------------------------------------------   -----------------   -----------------------------
-|id |title                       |lecturer_id |   |id |name       |   |id |student_id | course_id |
-----------------------------------------------|   -----------------   -----------------------------
-|1  |Underwater Basket Weaving   |2           |   |1  |Bert       |   |1  |1          |1          |
-|2  |History of Toast            |1           |   |2  |Ernie      |   |2  |1          |3          |
-|3  |Ghostbusting                |1           |   |3  |Elmo       |   |3  |1          |4          |
-|4  |Crochet 101         |2           |   -----------------   |4  |2          |2          |
-----------------------------------------------|                       |5  |2          |4          |
-                                                                      |6  |3          |1          |
-                                                                      |7  |3          |2          |
-                                                                      |8  |3          |3          |
-                                                                      -----------------------------
+![alt text](img/6.png "DB stage 6")
 
 #### How is the relationship established using SQL?
 
