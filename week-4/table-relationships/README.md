@@ -12,10 +12,10 @@ A significant part of good relational database design is understanding how to di
 
 There are three types of relationships which can exist between tables in a relational database - one-to-one, one-to-many, and many-to-many.  Looking at the latter two, we'll try to answer four questions.
 
-a) What is the structure of the relationship?
-b) How is the relationship represented in a database?
-c) How is the relationship established using SQL?
-d) How do we make use of the relationship to query data?
+- What is the structure of the relationship?
+- How is the relationship represented in a database?
+- How is the relationship established using SQL?
+- How do we make use of the relationship to query data?
 
 ## One-to-many
 ### What is the structure of the relationship?
@@ -125,4 +125,4 @@ Let's break this statement down a little.
 * Your tables should reflect a many-to-many relationship between Tags and Posts.
 
 ##Extension
-Using either the command line or TablePlus, add some data into your tables.  Try querying this data using the relationships you have modelled. 
+Using either the command line or TablePlus, add some data into your tables.  Try querying this data using the relationships you have modelled.
