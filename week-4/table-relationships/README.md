@@ -24,15 +24,7 @@ A one-to-many relationship describes a situation in which one parent model _**ha
 
 More concretely, let's imagine we're designing a database system for a university which, for now, has two tables - one for lecturers, and one for courses.
 
-LECTURER                          COURSE
--------------------               ----------------------------------
-|id  |name        |               |id |title                       |
--------------------               ----------------------------------
-|1   |Mr Chips    |               |1  |Underwater Basket Weaving   |
-|2   |Professor X |               |2  |History of Toast            |
--------------------               |3  |Ghostbusting                |
-                                  |4  |Crochet 101         |
-                                  ----------------------------------
+![alt text](img/1.png "DB stage 1")
 
 Presumably it's the case that each lecturer is responsible for teaching more than one course - i.e. a lecturer
 _**has many**_ courses.
