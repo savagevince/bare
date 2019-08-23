@@ -17,14 +17,14 @@ When observing your pair, keep an eye out for the following common deviations fr
 - Only write code to fix the test fail message you can see
 - Including edge cases
 - Testing the behaviour of a function, not state of a class
+- Refactoring verbose tests after the code is working
+- Looking for an opportunity to refactor after getting to green
 
 ## Programming Fluently
 **Bad**
 - Sets up a complex project structure for a small application
-- Takes a long time to get a new project setup
 - Copying and pasting code from old projects
 - Copying and pasting code from examples on the web
-- Doesn't use built in functionality in their tools e.g. not using `subject` in RSpec
 - Long pauses without any action
 
 **Good**
@@ -32,13 +32,14 @@ When observing your pair, keep an eye out for the following common deviations fr
 - Can setup a new project in their chosen language quickly, and knows where to look if they get stuck
 - Refers to official documentation when stuck on how to use a tool or language
 - Knows how to use their tools e.g. git, text editor, test suite
+- Organises their coding environment e.g. using split screens to see code and tests.
 
 ## Debugging
 **Bad**
 - Did not read error messages
 - Googling for unrelated things
 - Avoids solving the problem e.g. skips the test, moves on to new functionality
-- Doesn't take action, pauses and thinks
+- Doesn't take action, pauses for long periods and gets 'stuck'
 - Making guesses
 
 **Good**
@@ -47,6 +48,7 @@ When observing your pair, keep an eye out for the following common deviations fr
 - Perseveres to solve the issue, even if they are not immediately aware of the cause
 - Follows a debugging process e.g. tightens the loop and gets visibility
 - Has a range to debugging approaches they can deploy to resolve an issue
+- Strives to build a model of the code they are working on e.g. diagramming or explaining what the code does
 
 ## Modelling
 **Bad**
@@ -73,14 +75,14 @@ When observing your pair, keep an eye out for the following common deviations fr
 **Good**
 - Using names that clearly relate to the class/method's purpose
 - Waiting until there is a pattern in the code before applying an abstraction
-- Checking code regularly for opportunities to refactoring
+- Checking code regularly for opportunities to refactor
 - Retaining and improving readability when refactoring
 - Making small changes to improve the quality of the code
 
 ## Problem Solving
 **Bad**
-- Pausing, thinking
-- Googling for solutions to the challenge
+- Pausing for long periods without verbalising thought process
+- Googling for solutions to the specific challenge
 - Not breaking the problem down
 - Trying random problem solving approaches
 - Guessing possible solutions
@@ -89,6 +91,7 @@ When observing your pair, keep an eye out for the following common deviations fr
 
 **Good**
 - Tries to understand the problem by diagramming, or writing pseudo-code
+- Verbalises their thought process when solving a problem
 - Uses Google to supplement their problem solving approach e.g. looking up specific syntax
 - Breaks the problem down into smaller problems
 - Has a problem solving approach that they default to e.g. defining inputs and outputs, or drawing a user interaction diagram
