@@ -28,7 +28,7 @@ In this workshop, you'll practice one part of this: encapsulating and sharing yo
 
 2. Create an `interrobang` module, using TDD. The new module should add `??!` to any given text. Once you've extracted this module, update the code in `interrobangSmiley` to use the module.
 
-
+3. Create an `exlaim` module, using TDD. The new module should add `!` to any given text. Once you've extracted this module, update the code in `interrobang` to use it.
 
 #### Questions
 
