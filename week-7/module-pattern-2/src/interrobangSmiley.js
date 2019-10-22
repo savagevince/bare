@@ -1,9 +1,9 @@
 "use strict";
 
-(function(module) {
+(function(exports) {
   var QUESTION_MARK_COUNT = 2
   function interrobangSmiley(text) {
-    return text + "?".repeat(QUESTION_MARK_COUNT) + "!" + " :)"
+    return smiley(interrobang(text))
   }
-  module.interrobangSmiley = interrobangSmiley;
+  exports.interrobangSmiley = interrobangSmiley;
 })(this);
